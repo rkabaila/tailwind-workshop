@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 400;
+    src: url("./fonts/ProximaNova-Regular.woff") format("woff");
+  }
+  @font-face {
+    font-family: Proxima Nova;
+    font-weight: 600;
+    src: url("./fonts/ProximaNova-Semibold.woff") format("woff");
+  }
+  h1 {
+    @apply text-2xl font-semibold;
+  }
+  h2 {
+    @apply text-xl;
+  }
+}
