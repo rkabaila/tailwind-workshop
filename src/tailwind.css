@@ -19,4 +19,7 @@
   h2 {
     @apply text-xl;
   }
+  .list-header {
+    @apply flex flex-row bg-gray-400;
+  }
 }
