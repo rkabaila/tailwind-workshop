@@ -12,36 +12,36 @@
    Status.
    Add some couriers data :
    const couriers = [
-  {
-    id: "1",
-    firstName: "John",
-    lastName: "Doe",
-    serviceCentre: "ABERDEEN",
-    vehicle: "Bike",
-    status: "busy",
-    circuit: "On circuit",
-  },
-  {
-    id: "2",
-    firstName: "John",
-    lastName: "Doe",
-    serviceCentre: "ABERDEEN",
-    vehicle: "Bike",
-    status: "busy",
-    circuit: "On circuit",
-  },
-  {
-    id: "3",
-    firstName: "John",
-    lastName: "Doe",
-    serviceCentre: "ABERDEEN",
-    vehicle: "Bike",
-    status: "busy",
-    circuit: "On circuit",
-  },
-]
-   Make each cell width w-1/7. 
-   
+   {
+   id: "1",
+   firstName: "John",
+   lastName: "Doe",
+   serviceCentre: "ABERDEEN",
+   vehicle: "Bike",
+   status: "busy",
+   circuit: "On circuit",
+   },
+   {
+   id: "2",
+   firstName: "John",
+   lastName: "Doe",
+   serviceCentre: "ABERDEEN",
+   vehicle: "Bike",
+   status: "busy",
+   circuit: "On circuit",
+   },
+   {
+   id: "3",
+   firstName: "John",
+   lastName: "Doe",
+   serviceCentre: "ABERDEEN",
+   vehicle: "Bike",
+   status: "busy",
+   circuit: "On circuit",
+   },
+   ]
+   Make each cell width w-1/7.
+
    As tailwind does not have this class, add it to tailwind config.
    If the className becomes too long or we want to reuse it we can:
 
@@ -52,4 +52,4 @@
    - ...
      What are you using?
 
-4. Make
+4. Make list responsive: display 3 columns on mobile, 4 on sm, 5 on md, 6 on lg, 7 on xl.

@@ -36,9 +36,18 @@ const Cell = ({
 }: {
   children: string;
   className?: string;
-}) => <h3 className={`py-2 px-5 w-1/7 ${className}`}>{children}</h3>;
+}) => (
+  <h3
+    className={`py-2 px-5 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:w-1/7 ${
+      className ?? ""
+    }`}
+  >
+    {children}
+  </h3>
+);
 
-const headerCell = "py-2 px-5 w-1/7 font-bold";
+const headerCell =
+  "py-2 px-5 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:w-1/7 font-bold";
 
 export const App = () => {
   return (
@@ -47,12 +56,12 @@ export const App = () => {
       <h2 className="mx-auto mb-4">Couriers list</h2>
       <div className="list-header">
         <div className={headerCell}>Id</div>
-        <div className={headerCell}>Firstname</div>
-        <div className={headerCell}>Lastname</div>
-        <div className={headerCell}>Vehicle</div>
-        <div className={headerCell}>Service centre</div>
-        <div className={headerCell}>Circuit</div>
-        <div className={headerCell}>Status</div>
+        <div className={headerCell}>First Name</div>
+        <div className={headerCell}>Last Name</div>
+        <div className={`${headerCell} hidden sm:block`}>Service centre</div>
+        <div className={`${headerCell} hidden md:block`}>Vehicle</div>
+        <div className={`${headerCell} hidden lg:block`}>Status</div>
+        <div className={`${headerCell} hidden xl:block`}>Circuit</div>
       </div>
       {couriers.map((courier) => {
         const {
@@ -69,10 +78,10 @@ export const App = () => {
             <Cell>{id}</Cell>
             <Cell>{firstName}</Cell>
             <Cell>{lastName}</Cell>
-            <Cell>{serviceCentre}</Cell>
-            <Cell>{vehicle}</Cell>
-            <Cell>{status}</Cell>
-            <Cell>{circuit}</Cell>
+            <Cell className="hidden sm:block">{serviceCentre}</Cell>
+            <Cell className="hidden md:block">{vehicle}</Cell>
+            <Cell className="hidden lg:block">{status}</Cell>
+            <Cell className="hidden xl:block">{circuit}</Cell>
           </div>
         );
       })}
