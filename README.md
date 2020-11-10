@@ -53,3 +53,5 @@
      What are you using?
 
 4. Make list responsive: display 3 columns on mobile, 4 on sm, 5 on md, 6 on lg, 7 on xl.
+
+5. Theme colors are defined in /tailwindcss/stubs/defaultConfig.stub.js. If we need more colors, we extend theme in tailwind.config.js Add color silver #C0C0C0 to theme and use it for button "Load more" below the list.

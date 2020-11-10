@@ -85,6 +85,7 @@ export const App = () => {
           </div>
         );
       })}
+      <button className="bg-silver my-4">Load More</button>
     </div>
   );
 };
