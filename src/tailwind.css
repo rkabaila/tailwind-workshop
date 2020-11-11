@@ -22,4 +22,18 @@
   .list-header {
     @apply flex flex-row bg-gray-400;
   }
+  .spinner {
+    border: 3px solid theme("colors.blue.100");
+    border-top: 3px solid theme("colors.blue.500");
+    border-radius: 50%;
+    @apply animate-spin;
+  }
+  .spinner-big {
+    width: 50px;
+    height: 50px;
+  }
+  .spinner-small {
+    width: 20px;
+    height: 20px;
+  }
 }

@@ -1,6 +1,7 @@
 const plugin = require("tailwindcss/plugin");
 
 module.exports = {
+  purge: ["./public/index.html", "./src/**/*.tsx"],
   theme: {
     fontFamily: {
       proxima: ["Proxima Nova"],

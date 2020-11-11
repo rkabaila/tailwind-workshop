@@ -89,4 +89,4 @@
 
 9. Prepare production build. In tailwind config add purge and include all files which uses tailwind css classes.
 
-10. Override third party library css.
+10. Override third party library css. Use react select for courier filters.
