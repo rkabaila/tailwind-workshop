@@ -54,4 +54,39 @@
 
 4. Make list responsive: display 3 columns on mobile, 4 on sm, 5 on md, 6 on lg, 7 on xl.
 
-5. Theme colors are defined in /tailwindcss/stubs/defaultConfig.stub.js. If we need more colors, we extend theme in tailwind.config.js Add color silver #C0C0C0 to theme and use it for button "Load more" below the list.
+5. Theme colors are defined in /tailwindcss/stubs/defaultConfig.stub.js. If we need more colors, we extend theme in tailwind.config.js. Add color silver #C0C0C0 to theme and use it for header bar background.
+
+6. Add base styles using plugin. You should prefer a plugin if:
+   You want to publish your base styles publicly and make them easy for other users to install.
+   You want to re-use your base styles across multiple projects in your company and prefer sharing JS dependencies instead of CSS dependencies.
+   Add h3 above the list with base styles like { margin: "30px 0", textAlign: "right" } saying "Filters"
+
+7. Components using plugins. In addition to writing component classes directly in your CSS files, you can also add component classes to Tailwind by writing your own plugin. Add components :
+   const buttons = {
+   ".btn": {
+   padding: ".5rem 1rem",
+   borderRadius: ".25rem",
+   fontWeight: "600",
+   },
+   ".btn-blue": {
+   backgroundColor: "#3490dc",
+   color: "#fff",
+   "&:hover": {
+   backgroundColor: "#2779bd",
+   },
+   },
+   ".btn-red": {
+   backgroundColor: "#e3342f",
+   color: "#fff",
+   "&:hover": {
+   backgroundColor: "#cc1f1a",
+   },
+   },
+   };
+   and use .btn .btn-blue for button "Load more" below the list.
+
+8. Make spinner and show it on Load more click.
+
+9. Prepare production build. In tailwind config add purge and include all files which uses tailwind css classes.
+
+10. Override third party library css.

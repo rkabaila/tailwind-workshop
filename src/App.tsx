@@ -37,13 +37,13 @@ const Cell = ({
   children: string;
   className?: string;
 }) => (
-  <h3
+  <p
     className={`py-2 px-5 w-1/3 sm:w-1/4 md:w-1/5 lg:w-1/6 xl:w-1/7 ${
       className ?? ""
     }`}
   >
     {children}
-  </h3>
+  </p>
 );
 
 const headerCell =
@@ -54,6 +54,7 @@ export const App = () => {
     <div className="flex flex-col items-stretch mx-8">
       <h1 className="mx-auto">Couriers page</h1>
       <h2 className="mx-auto mb-4">Couriers list</h2>
+      <h3>Filters</h3>
       <div className="list-header">
         <div className={headerCell}>Id</div>
         <div className={headerCell}>First Name</div>
@@ -85,7 +86,7 @@ export const App = () => {
           </div>
         );
       })}
-      <button className="bg-silver my-4">Load More</button>
+      <button className="btn btn-blue">Load More</button>
     </div>
   );
 };
