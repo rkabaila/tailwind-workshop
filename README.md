@@ -1,44 +1,92 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Adding Base Styles. Make body background gray and all h1's font-size 1.5 rem, h2's font-size 1.25 rem. Add container with margin left and right 2rem. Add centered h1 - Couriers page and h2 - Couriers list.
 
-## Available Scripts
+2. Add Proxima Nova font to project(https://en.bestfonts.pro/font/proxima-nova). Apply Proxima Nova regular to whole project and semibold to h1. You can check font using Chrome extension WhatFont. Need to rerun yarn start after modifying tailwind.css or tailwind.config.js file.
 
-In the project directory, you can run:
+3. Add headings to the list:
+   Id
+   Firstname
+   Lastname
+   Vehicle
+   Service centre
+   Circuit
+   Status.
+   Add some couriers data :
+   const couriers = [
+   {
+   id: "1",
+   firstName: "John",
+   lastName: "Doe",
+   serviceCentre: "ABERDEEN",
+   vehicle: "Bike",
+   status: "busy",
+   circuit: "On circuit",
+   },
+   {
+   id: "2",
+   firstName: "John",
+   lastName: "Doe",
+   serviceCentre: "ABERDEEN",
+   vehicle: "Bike",
+   status: "busy",
+   circuit: "On circuit",
+   },
+   {
+   id: "3",
+   firstName: "John",
+   lastName: "Doe",
+   serviceCentre: "ABERDEEN",
+   vehicle: "Bike",
+   status: "busy",
+   circuit: "On circuit",
+   },
+   ]
+   Make each cell width w-1/7.
 
-### `yarn start`
+   As tailwind does not have this class, add it to tailwind config.
+   If the className becomes too long or we want to reuse it we can:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+   - move it to a css class to tailwind.css file - make listHeader class in tailwind.css and apply some styles like flex flex-row bg-gray-400
+   - move it to constant above - make .headerCell const with some styles like py-2 px-5 w-1/7 font-bold
+   - make a component - make a Cell component which render h3 with some classes like py-2 px-5 w-1/7. When we make component, we have to pass className prop to component, that additional classes would work on it.
+   - ...
+   - ...
+     What are you using?
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+4. Make list responsive: display 3 columns on mobile, 4 on sm, 5 on md, 6 on lg, 7 on xl.
 
-### `yarn test`
+5. Theme colors are defined in /tailwindcss/stubs/defaultConfig.stub.js. If we need more colors, we extend theme in tailwind.config.js. Add color silver #C0C0C0 to theme and use it for header bar background.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+6. Add base styles using plugin. You should prefer a plugin if:
+   You want to publish your base styles publicly and make them easy for other users to install.
+   You want to re-use your base styles across multiple projects in your company and prefer sharing JS dependencies instead of CSS dependencies.
+   Add h3 above the list with base styles like { margin: "30px 0", textAlign: "right" } saying "Filters"
 
-### `yarn build`
+7. Components using plugins. In addition to writing component classes directly in your CSS files, you can also add component classes to Tailwind by writing your own plugin. Add components :
+   const buttons = {
+   ".btn": {
+   padding: ".5rem 1rem",
+   borderRadius: ".25rem",
+   fontWeight: "600",
+   },
+   ".btn-blue": {
+   backgroundColor: "#3490dc",
+   color: "#fff",
+   "&:hover": {
+   backgroundColor: "#2779bd",
+   },
+   },
+   ".btn-red": {
+   backgroundColor: "#e3342f",
+   color: "#fff",
+   "&:hover": {
+   backgroundColor: "#cc1f1a",
+   },
+   },
+   };
+   and use .btn .btn-blue for button "Load more" below the list.
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+8. Make spinner and show it on Load more click.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+9. Prepare production build. In tailwind config add purge and include all files which uses tailwind css classes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+10. Override third party library css. Use react select for courier filters.
