@@ -59,7 +59,7 @@
 6. Add base styles using plugin. You should prefer a plugin if:
    You want to publish your base styles publicly and make them easy for other users to install.
    You want to re-use your base styles across multiple projects in your company and prefer sharing JS dependencies instead of CSS dependencies.
-   Add h3 above the list with base styles like { margin: "30px 0", textAlign: "right" } saying "Filters"
+   Add h3 in the headerbar with base styles color white saying "Tailwind css workshop"
 
 7. Components using plugins. In addition to writing component classes directly in your CSS files, you can also add component classes to Tailwind by writing your own plugin. Add components :
    const buttons = {
@@ -89,4 +89,4 @@
 
 9. Prepare production build. In tailwind config add purge and include all files which uses tailwind css classes.
 
-10. Override third party library css. Use react select for courier filters.
+10. Override third party library css. Use some lib for courier filters.

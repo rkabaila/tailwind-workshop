@@ -16,9 +16,9 @@ module.exports = {
     },
   },
   plugins: [
-    plugin(({ addBase }) => {
+    plugin(({ addBase, config }) => {
       addBase({
-        h3: { margin: "30px 0", textAlign: "right" },
+        h3: { color: config("theme.colors.white") },
       });
     }),
     plugin(({ addComponents }) => {

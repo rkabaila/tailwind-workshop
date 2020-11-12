@@ -59,11 +59,14 @@ export const App = () => {
 
   return (
     <>
-      <div className="bg-silver h-10" />
+      <div className="bg-silver h-10 flex items-center">
+        <div className="px-2">
+          <h3>Tailwind css workshop</h3>
+        </div>
+      </div>
       <div className="flex flex-col items-stretch mx-8">
         <h1 className="mx-auto">Couriers page</h1>
         <h2 className="mx-auto mb-4">Couriers list</h2>
-        <h3>Filters</h3>
         <div className="list-header">
           <div className={headerCell}>Id</div>
           <div className={headerCell}>First Name</div>
